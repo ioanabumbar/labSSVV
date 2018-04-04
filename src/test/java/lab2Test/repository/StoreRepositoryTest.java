@@ -40,6 +40,13 @@ public class StoreRepositoryTest extends TestCase {
         assertTrue(filtered.get(0).getName().equals("pen"));
     }
 
+    public void testGetProductsCategory2() {
+        ArrayList<Product> filtered = repository.getProductsCategory("aliment");
+        assertEquals(filtered.size(), 0);
+//        assertTrue(filtered.get(0).getName().equals("pen"));
+    }
+
+
     public void testStockSituationProduct() throws IOException {
         ArrayList<Product> filtered = repository.stockSituationProduct("meat");
         System.out.println(filtered.toString());
