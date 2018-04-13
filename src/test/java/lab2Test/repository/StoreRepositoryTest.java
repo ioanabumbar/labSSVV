@@ -26,13 +26,45 @@ public class StoreRepositoryTest extends TestCase {
 //        assertEquals(productList.size(), 1);
 
         assertEquals(repository.getAllProducts().size(), 3);
-        repository.addNewProduct(new Product(4,"aahh", "bb", 12));
+        repository.addNewProduct(new Product(4,"milk", "food", 12));
         assertEquals(repository.getAllProducts().size(), 4);
     }
 
-    public void testGetProducts() throws IOException {
+    public void testAddNewProduct2() throws IOException {
+//        assertEquals(productList.size(), 1);
+
+        assertEquals(repository.getAllProducts().size(), 3);
+        repository.addNewProduct(new Product(3,"new", "electric", 2));
         assertEquals(repository.getAllProducts().size(), 3);
     }
+
+    public void testAddNewProduct3() throws IOException {
+//        assertEquals(productList.size(), 1);
+
+        assertEquals(repository.getAllProducts().size(), 3);
+        repository.addNewProduct(new Product(19,"wire2", "electric", 2));
+        assertEquals(repository.getAllProducts().size(), 4);
+    }
+
+    public void testAddNewProduct4() throws IOException {
+//        assertEquals(productList.size(), 1);
+
+        assertEquals(repository.getAllProducts().size(), 3);
+        repository.addNewProduct(new Product(19,"wire2*", "electric", 2));
+        assertEquals(repository.getAllProducts().size(), 3);
+    }
+
+   public void testAddNewProduct5() throws IOException {
+//        assertEquals(productList.size(), 1);
+
+        assertEquals(repository.getAllProducts().size(), 3);
+        repository.addNewProduct(new Product(0,"", "electric", 2));
+        assertEquals(repository.getAllProducts().size(), 3);
+    }
+
+    /*public void testGetProducts() throws IOException {
+        assertEquals(repository.getAllProducts().size(), 3);
+    }*/
 
     public void testGetProductsCategory() {
         ArrayList<Product> filtered = repository.getProductsCategory("object");
@@ -46,8 +78,15 @@ public class StoreRepositoryTest extends TestCase {
 //        assertTrue(filtered.get(0).getName().equals("pen"));
     }
 
+    public void testGetProductsCategory3() {
+        StoreRepository repository2 = new StoreRepository();
+        assertEquals(repository2.getAllProducts().size(), 0);
+        ArrayList<Product> filtered = repository2.getProductsCategory("aliment");
+        assertEquals(filtered.size(), 0);
+    }
 
-    public void testStockSituationProduct() throws IOException {
+
+   /* public void testStockSituationProduct() throws IOException {
         ArrayList<Product> filtered = repository.stockSituationProduct("meat");
         System.out.println(filtered.toString());
         assertTrue(filtered.size() == 1);
@@ -61,5 +100,5 @@ public class StoreRepositoryTest extends TestCase {
     public void testStockSituation() {
         ArrayList<Product> filtered = repository.stockSituation();
         assertEquals(filtered.size(), 3);
-    }
+    }*/
 }
