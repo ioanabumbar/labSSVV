@@ -97,6 +97,21 @@ public class StoreRepositoryTest extends TestCase {
         assertTrue(filtered.size() == 2);
     }
 
+    public void testIntegrationBigBang() throws IOException {
+        ArrayList<Product> filtered = repository.getProductsCategory("food");
+        assertEquals(filtered.size(), 2);
+        assertTrue(filtered.get(0).getName().equals("meat"));
+
+        ArrayList<Product> filtered2 = repository.stockSituationProduct("meat");
+        System.out.println(filtered2.toString());
+        assertTrue(filtered2.size() == 1);
+
+        repository.addNewProduct(new Product(4,"meat", "bb", 1));
+        filtered = repository.stockSituationProduct("meat");
+        System.out.println(filtered.toString());
+        assertTrue(filtered.size() == 2);
+    }
+
     /*
     public void testStockSituation() {
         ArrayList<Product> filtered = repository.stockSituation();
