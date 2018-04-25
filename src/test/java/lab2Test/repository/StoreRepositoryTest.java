@@ -86,7 +86,7 @@ public class StoreRepositoryTest extends TestCase {
     }
 
 
-   /* public void testStockSituationProduct() throws IOException {
+   public void testStockSituationProduct() throws IOException {
         ArrayList<Product> filtered = repository.stockSituationProduct("meat");
         System.out.println(filtered.toString());
         assertTrue(filtered.size() == 1);
@@ -97,6 +97,7 @@ public class StoreRepositoryTest extends TestCase {
         assertTrue(filtered.size() == 2);
     }
 
+    /*
     public void testStockSituation() {
         ArrayList<Product> filtered = repository.stockSituation();
         assertEquals(filtered.size(), 3);
