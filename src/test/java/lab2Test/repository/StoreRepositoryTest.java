@@ -85,6 +85,21 @@ public class StoreRepositoryTest extends TestCase {
         assertEquals(filtered.size(), 0);
     }
 
+    public void testGetProductsCategory4() throws IOException{
+        StoreRepository repository2 = new StoreRepository();
+        repository2.addNewProduct(new Product(1,"meat","food",12));
+        ArrayList<Product> filtered = repository2.getProductsCategory("food");
+        assertEquals(filtered.size(), 1);
+    }
+
+    public void testGetProductsCategory5() throws IOException{
+        StoreRepository repository2 = new StoreRepository();
+        repository2.addNewProduct(new Product(1,"meat","food",12));
+        repository2.addNewProduct(new Product(2,"chicken","food", 5));
+        ArrayList<Product> filtered = repository2.getProductsCategory("food");
+        assertEquals(filtered.size(), 2);
+    }
+
 
    public void testStockSituationProduct() throws IOException {
         ArrayList<Product> filtered = repository.stockSituationProduct("meat");
